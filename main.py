@@ -9,13 +9,15 @@ from plotly import graph_objs
 from pages.prediction_page import prediction_page
 from pages.compare_page import compare_page
 from pages.news_page import news_page
+from pages.info_page import info_page
 
 
 st.title('Stock Dashboard')
 tabs_list = [
-    'Predict Future Stock Price',
-    'Comapare Stocks',
-    'News'
+    'Predict Future Price',
+    'Comapare',
+    'Latest News',
+    'Additional Info'
     ]
 tabs = st.tabs(tabs_list)
 
@@ -27,3 +29,7 @@ with tabs[1]:
 
 with tabs[2]:
     news_page()
+
+with tabs[3]:
+    info_page()
+

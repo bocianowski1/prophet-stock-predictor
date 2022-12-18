@@ -7,7 +7,7 @@ from prophet.plot import plot_plotly
 from plotly import graph_objs
 
 def compare_page():
-    st.title('Compare your Stocks')
+    st.title('Compare Stocks🔎')
     stocks = ('AAPL', 'GOOG', 'MSFT')
     selected_stocks = st.multiselect('Choose a Stock', stocks)
     
@@ -16,12 +16,12 @@ def compare_page():
         selected_stocks.append(new_ticker)
 
     start_date_col, end_date_col = st.columns(2)
-    start_date = start_date_col.date_input('Start Date', value=date(2015, 1, 1), key=3)
-    end_date = end_date_col.date_input('End Date', value=date.today(), key=4)
+    start_date = start_date_col.date_input('Start Date', value=date(2015, 1, 1), key='compare start')
+    end_date = end_date_col.date_input('End Date', value=date.today(), key='compare end')
 
     def get_stocks() -> pd.DataFrame:
         data = cumulative_returns(yf.download(selected_stocks, start_date, end_date)['Close'])
-        data.reset_index(inplace=True)
+        # data.reset_index(inplace=True)
         return data
 
     def cumulative_returns(df: pd.DataFrame):
@@ -33,8 +33,6 @@ def compare_page():
     if len(selected_stocks) > 0:
         
         data = get_stocks()
-        st.warning('This is a warning', icon="⚠️")
-        
         st.line_chart(data)
 
         
