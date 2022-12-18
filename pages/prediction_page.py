@@ -8,6 +8,7 @@ from plotly import graph_objs
 
 
 def prediction_page():
+    st.title('Predict your Stock')
     stocks = ('AAPL', 'GOOG', 'MSFT')
     selected_stock = st.selectbox('Choose a Stock', stocks)
 
@@ -22,7 +23,7 @@ def prediction_page():
 
     @st.cache 
     def get_stock(ticker) -> pd.DataFrame:
-        data = yf.download(ticker, start_date, end_date)
+        data: pd.DataFrame = yf.download(ticker, start_date, end_date)
         data.reset_index(inplace=True)
         return data
 
