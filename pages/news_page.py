@@ -10,11 +10,17 @@ def news_page(tickers):
 
     def get_news_headers(news):
         for article in news:
-            st.write(f"[{article['title']}]({article['link']})")
+            col1, col2 = st.columns(2)
+            try:
+                img = article['thumbnail']['resolutions'][0]['url']
+                col1.image(img, use_column_width=True)
+            except:
+                st.text('No image')
+            col2.subheader(f"[{article['title']}]({article['link']})")
             
 
     if len(stock) > 0:
-        st.subheader(f'{stock} Latest News!')
+        # st.subheader(f'{stock} Latest News!')
         with st.spinner('Loading News...'):
             get_news_headers(ticker.news)
-            st.write(ticker)
+            st.write(ticker.news)

@@ -12,9 +12,9 @@ tickers = pd.read_csv('data/marketcap.csv')['Ticker']
 st.title('S&P 500 Stock Dashboard')
 tabs_list = [
     'Predict Future Price',
+    'Additional Info',
     'Comapare',
     'Latest News',
-    'Additional Info',
     'About this Project'
     ]
 tabs = st.tabs(tabs_list)
@@ -23,13 +23,13 @@ with tabs[0]:
     prediction_page(tickers)
 
 with tabs[1]:
-    compare_page(tickers)
+    info_page(tickers)
 
 with tabs[2]:
-    news_page(tickers)
+    compare_page(tickers)
 
 with tabs[3]:
-    info_page(tickers)
+    news_page(tickers)
 
 with tabs[4]:
     about_page()

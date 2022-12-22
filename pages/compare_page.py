@@ -2,7 +2,6 @@ import streamlit as st
 from datetime import date
 import pandas as pd
 import yfinance as yf
-from prophet import Prophet
 from prophet.plot import plot_plotly
 from plotly import graph_objs
 
@@ -47,7 +46,6 @@ def compare_page(tickers):
         st.plotly_chart(fig)
 
     if len(selected_stocks) > 0:
-        
         data = get_stocks()
         st.line_chart(data)
         
