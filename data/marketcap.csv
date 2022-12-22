@@ -1,0 +1,506 @@
+Ticker,Name,Sector,Cap
+AAPL,Apple Inc.,Electronic Technology,219971
+MSFT,Microsoft Corporation,Technology Services,189847
+GOOGL,Alphabet Inc.,Technology Services,147708
+GOOG,Alphabet Inc.,Technology Services,147063
+AMZN,Amazon.com Inc.,Retail Trade,110402
+TSLA,Tesla Inc.,Consumer Durables,75454
+BRK.B,Berkshire Hathaway Inc. New,Finance,59826
+JNJ,Johnson & Johnson,Health Technology,45489
+UNH,UnitedHealth Group Incorporated,Health Services,44568
+META,Meta Platforms Inc.,Technology Services,43043
+NVDA,NVIDIA Corporation,Electronic Technology,42176
+V,Visa Inc.,Commercial Services,40680
+XOM,Exxon Mobil Corporation,Energy Minerals,38811
+JPM,JP Morgan Chase & Co.,Finance,33972
+WMT,Walmart Inc.,Retail Trade,33507
+PG,Procter & Gamble Company (The),Consumer Non-Durables,32654
+MA,Mastercard Incorporated,Commercial Services,30981
+CVX,Chevron Corporation,Energy Minerals,30495
+LLY,Eli Lilly and Company,Health Technology,28315
+HD,Home Depot Inc. (The),Retail Trade,27647
+PFE,Pfizer Inc.,Health Technology,26960
+BAC,Bank of America Corporation,Finance,26491
+KO,Coca-Cola Company (The),Consumer Non-Durables,26205
+ABBV,AbbVie Inc.,Health Technology,25340
+MRK,Merck & Company Inc.,Health Technology,22287
+PEP,PepsiCo Inc.,Consumer Non-Durables,22117
+VZ,Verizon Communications Inc.,Communications,21109
+COST,Costco Wholesale Corporation,Retail Trade,20541
+AVGO,Broadcom Inc.,Electronic Technology,20370
+TMO,Thermo Fisher Scientific Inc,Health Technology,20191
+ABT,Abbott Laboratories,Health Technology,18309
+CSCO,Cisco Systems Inc.,Technology Services,18274
+ORCL,Oracle Corporation,Technology Services,18124
+ACN,Accenture plc,Technology Services,17987
+DHR,Danaher Corporation,Health Technology,17840
+MCD,McDonald’s Corporation,Consumer Services,17555
+ADBE,Adobe Inc.,Technology Services,17461
+CMCSA,Comcast Corporation,Consumer Services,17230
+NKE,Nike Inc.,Consumer Non-Durables,17177
+DIS,Walt Disney Company (The),Consumer Services,17127
+CRM,Salesforce Inc.,Technology Services,16599
+TMUS,T-Mobile US Inc.,Communications,16469
+BMY,Bristol-Myers Squibb Company,Health Technology,16312
+INTC,Intel Corporation,Electronic Technology,15446
+PM,Philip Morris International Inc,Consumer Non-Durables,15288
+UPS,United Parcel Service Inc.,Transportation,15138
+LIN,Linde plc,Process Industries,15044
+WFC,Wells Fargo & Company,Finance,14871
+T,AT&T Inc.,Communications,14292
+NEE,NextEra Energy Inc.,Utilities,14254
+TXN,Texas Instruments Incorporated,Electronic Technology,14189
+QCOM,QUALCOMM Incorporated,Electronic Technology,13982
+RTX,Raytheon Technologies Corporation,Electronic Technology,13805
+AMD,Advanced Micro Devices Inc.,Electronic Technology,13715
+UNP,Union Pacific Corporation,Transportation,13260
+MS,Morgan Stanley,Finance,13096
+COP,ConocoPhillips,Energy Minerals,12772
+AMGN,Amgen Inc.,Health Technology,12671
+IBM,International Business Machines Corporation,Technology Services,12403
+HON,Honeywell International Inc.,Producer Manufacturing,12268
+CVS,CVS Health Corporation,Retail Trade,11968
+SCHW,Charles Schwab Corporation (The),Finance,11925
+MDT,Medtronic plc.,Health Technology,11896
+LMT,Lockheed Martin Corporation,Electronic Technology,11129
+ANTM,Anthem Inc.,Health Services,11125
+SPGI,S&P Global Inc.,Commercial Services,11065
+LOW,Lowe’s Companies Inc.,Retail Trade,11037
+AXP,American Express Company,Finance,10920
+AMT,American Tower Corporation (REIT),Finance,10777
+INTU,Intuit Inc.,Technology Services,10638
+CAT,Caterpillar Inc.,Producer Manufacturing,10501
+DE,Deere & Company,Producer Manufacturing,10149
+GS,Goldman Sachs Group Inc. (The),Finance,9785
+C,Citigroup Inc.,Finance,9299
+BLK,BlackRock Inc.,Finance,9253
+NOW,ServiceNow Inc.,Technology Services,9157
+EL,Estee Lauder Companies Inc. (The),Consumer Non-Durables,8805
+ADP,Automatic Data Processing Inc.,Technology Services,8630
+PYPL,PayPal Holdings Inc.,Commercial Services,8461
+PLD,Prologis Inc.,Finance,8407
+SBUX,Starbucks Corporation,Consumer Services,8331
+MDLZ,Mondelez International Inc.,Consumer Non-Durables,8256
+AMAT,Applied Materials Inc.,Producer Manufacturing,8241
+MO,Altria Group Inc.,Consumer Non-Durables,8180
+BA,Boeing Company (The),Electronic Technology,8142
+CB,Chubb Limited,Finance,7990
+CI,Cigna Corporation,Health Services,7979
+BKNG,Booking Holdings Inc. Common Stock,Consumer Services,7828
+ADI,Analog Devices Inc.,Electronic Technology,7740
+DUK,Duke Energy Corporation (Holding Company),Utilities,7624
+NFLX,Netflix Inc.,Technology Services,7606
+ZTS,Zoetis Inc.,Health Technology,7576
+GILD,Gilead Sciences Inc.,Health Technology,7519
+MMC,Marsh & McLennan Companies Inc.,Finance,7459
+CME,CME Group Inc.,Finance,7438
+MMM,3M Company,Producer Manufacturing,7394
+SYK,Stryker Corporation,Health Technology,7390
+CHTR,Charter Communications Inc.,Consumer Services,7350
+GE,General Electric Company,Producer Manufacturing,7333
+NOC,Northrop Grumman Corporation,Electronic Technology,7176
+SO,Southern Company (The),Utilities,7117
+ISRG,Intuitive Surgical Inc.,Health Technology,7012
+VRTX,Vertex Pharmaceuticals Incorporated,Health Technology,6943
+EOG,EOG Resources Inc.,Energy Minerals,6875
+USB,U.S. Bancorp,Finance,6871
+CCI,Crown Castle International Corp. (REIT),Finance,6761
+BDX,Becton Dickinson and Company,Health Technology,6732
+TGT,Target Corporation,Retail Trade,6730
+TJX,TJX Companies Inc. (The),Retail Trade,6719
+PGR,Progressive Corporation (The),Finance,6497
+REGN,Regeneron Pharmaceuticals Inc.,Health Technology,6486
+PNC,PNC Financial Services Group Inc. (The),Finance,6460
+MU,Micron Technology Inc.,Electronic Technology,6366
+CSX,CSX Corporation,Transportation,6360
+CL,Colgate-Palmolive Company,Consumer Non-Durables,6349
+TFC,Truist Financial Corporation,Finance,6247
+D,Dominion Energy Inc.,Utilities,6189
+LRCX,Lam Research Corporation,Electronic Technology,6055
+GD,General Dynamics Corporation,Electronic Technology,6018
+FDX,FedEx Corporation,Transportation,5980
+WM,Waste Management Inc.,Industrial Services,5973
+ATVI,Activision Blizzard Inc,Consumer Durables,5939
+FISV,Fiserv Inc.,Finance,5768
+EQIX,Equinix Inc.,Finance,5759
+SHW,Sherwin-Williams Company (The),Process Industries,5717
+HUM,Humana Inc.,Health Services,5698
+PXD,Pioneer Natural Resources Company,Energy Minerals,5673
+FIS,Fidelity National Information Services Inc.,Technology Services,5651
+ITW,Illinois Tool Works Inc.,Producer Manufacturing,5644
+EW,Edwards Lifesciences Corporation,Health Technology,5532
+SLB,Schlumberger N.V.,Industrial Services,5525
+OXY,Occidental Petroleum Corporation,Energy Minerals,5444
+AON,Aon plc,Finance,5413
+DG,Dollar General Corporation,Retail Trade,5392
+NSC,Norfolk Southern Corporation,Transportation,5375
+APD,Air Products and Chemicals Inc.,Process Industries,5330
+MRNA,Moderna Inc.,Health Technology,5254
+PSA,Public Storage,Finance,5240
+NEM,Newmont Corporation,Non-Energy Minerals,5195
+ICE,Intercontinental Exchange Inc.,Finance,5190
+BSX,Boston Scientific Corporation,Health Technology,5181
+HCA,HCA Healthcare Inc.,Health Services,5079
+MET,MetLife Inc.,Finance,5075
+ETN,Eaton Corporation PLC,Producer Manufacturing,5050
+EMR,Emerson Electric Company,Producer Manufacturing,5000
+FCX,Freeport-McMoRan Inc.,Non-Energy Minerals,4976
+MPC,Marathon Petroleum Corporation,Energy Minerals,4965
+KLAC,KLA Corporation,Electronic Technology,4916
+GM,General Motors Company,Consumer Durables,4798
+MNST,Monster Beverage Corporation,Consumer Non-Durables,4782
+VLO,Valero Energy Corporation,Energy Minerals,4775
+MCO,Moody’s Corporation,Commercial Services,4773
+MAR,Marriott International,Consumer Services,4729
+CNC,Centene Corporation,Health Services,4717
+AEP,American Electric Power Company Inc.,Utilities,4635
+F,Ford Motor Company,Consumer Durables,4634
+SNPS,Synopsys Inc.,Technology Services,4634
+PSX,Phillips 66,Energy Minerals,4610
+FTNT,Fortinet Inc.,Electronic Technology,4536
+MCK,McKesson Corporation,Distribution Services,4496
+SRE,DBA Sempra,Utilities,4494
+ADM,Archer-Daniels-Midland Company,Process Industries,4464
+STZ,Constellation Brands Inc.,Consumer Non-Durables,4461
+KHC,The Kraft Heinz Company,Consumer Non-Durables,4455
+LHX,L3Harris Technologies Inc.,Electronic Technology,4408
+HSY,The Hershey Company,Consumer Non-Durables,4392
+ECL,Ecolab Inc.,Process Industries,4246
+NXPI,NXP Semiconductors N.V.,Electronic Technology,4196
+KMB,Kimberly-Clark Corporation,Consumer Non-Durables,4194
+COF,Capital One Financial Corporation,Finance,4190
+PAYX,Paychex Inc.,Technology Services,4169
+AIG,American International Group Inc. New,Finance,4124
+CDNS,Cadence Design Systems Inc.,Technology Services,4111
+EXC,Exelon Corporation,Utilities,4086
+GIS,General Mills Inc.,Consumer Non-Durables,4075
+SYY,Sysco Corporation,Distribution Services,4069
+DOW,Dow Inc.,Process Industries,4046
+ROP,Roper Technologies Inc.,Technology Services,4038
+DVN,Devon Energy Corporation,Energy Minerals,4006
+CTVA,Corteva Inc.,Process Industries,3989
+AZO,AutoZone Inc.,Retail Trade,3934
+ORLY,O’Reilly Automotive Inc.,Retail Trade,3920
+RSG,Republic Services Inc.,Industrial Services,3915
+O,Realty Income Corporation,Finance,3902
+TRV,The Travelers Companies Inc.,Finance,3891
+KMI,Kinder Morgan Inc.,Industrial Services,3797
+TEL,TE Connectivity Ltd. New Switzerland Registered Shares,Electronic Technology,3783
+APH,Amphenol Corporation,Electronic Technology,3781
+WMB,Williams Companies Inc. (The),Industrial Services,3768
+IQV,IQVIA Holdings Inc.,Health Services,3753
+CTAS,Cintas Corporation,Consumer Services,3655
+ADSK,Autodesk Inc.,Technology Services,3641
+EA,Electronic Arts Inc.,Consumer Durables,3636
+DLR,Digital Realty Trust Inc.,Finance,3620
+HPQ,HP Inc.,Electronic Technology,3543
+XEL,Xcel Energy Inc.,Utilities,3533
+WELL,Welltower Inc.,Finance,3525
+CMG,Chipotle Mexican Grill Inc.,Consumer Services,3521
+CTSH,Cognizant Technology Solutions Corporation,Technology Services,3520
+PRU,Prudential Financial Inc.,Finance,3509
+KR,Kroger Company (The),Retail Trade,3509
+DLTR,Dollar Tree Inc.,Retail Trade,3494
+AFL,AFLAC Incorporated,Finance,3477
+WBA,Walgreens Boots Alliance Inc.,Retail Trade,3459
+MSI,Motorola Solutions Inc.,Electronic Technology,3430
+WBD,Warner Bros. Discovery Inc. – Series A,Consumer Services,3426
+A,Agilent Technologies Inc.,Health Technology,3419
+BK,The Bank of New York Mellon Corporation,Finance,3404
+ALL,Allstate Corporation (The),Finance,3337
+HES,Hess Corporation,Energy Minerals,3324
+JCI,Johnson Controls International plc,Producer Manufacturing,3297
+MCHP,Microchip Technology Incorporated,Electronic Technology,3292
+AJG,Arthur J. Gallagher & Co.,Finance,3236
+MSCI,MSCI Inc,Technology Services,3230
+HLT,Hilton Worldwide Holdings Inc.,Consumer Services,3228
+BF.B,Brown Forman Inc,Consumer Non-Durables,3225
+BAX,Baxter International Inc.,Health Technology,3213
+BKR,Baker Hughes Company,Industrial Services,3173
+YUM,Yum! Brands Inc.,Consumer Services,3165
+SBAC,SBA Communications Corporation,Finance,3149
+SPG,Simon Property Group Inc.,Finance,3144
+GPN,Global Payments Inc.,Technology Services,3138
+ED,Consolidated Edison Inc.,Utilities,3120
+PH,Parker-Hannifin Corporation,Producer Manufacturing,3092
+HAL,Halliburton Company,Industrial Services,3038
+BIIB,Biogen Inc.,Health Technology,3030
+NUE,Nucor Corporation,Non-Energy Minerals,3020
+ABC,AmerisourceBergen Corporation,Distribution Services,3017
+LYB,LyondellBasell Industries NV,Process Industries,3004
+PEG,Public Service Enterprise Group Incorporated,Utilities,2990
+TSN,Tyson Foods Inc.,Consumer Non-Durables,2978
+MTB,M&T Bank Corporation,Finance,2964
+RMD,ResMed Inc.,Health Technology,2947
+TWTR,Twitter Inc.,Technology Services,2945
+OTIS,Otis Worldwide Corporation,Producer Manufacturing,2942
+CARR,Carrier Global Corporation,Producer Manufacturing,2937
+PCAR,PACCAR Inc.,Producer Manufacturing,2922
+ANET,Arista Networks Inc.,Electronic Technology,2909
+DD,DuPont de Nemours Inc.,Process Industries,2902
+WEC,WEC Energy Group Inc.,Utilities,2899
+ILMN,Illumina Inc.,Health Technology,2888
+TT,Trane Technologies plc,Producer Manufacturing,2882
+TDG,Transdigm Group Inc.,Electronic Technology,2867
+FAST,Fastenal Company,Distribution Services,2859
+IFF,International Flavors & Fragrances Inc.,Consumer Non-Durables,2852
+IDXX,IDEXX Laboratories Inc.,Health Technology,2783
+DXCM,DexCom Inc.,Health Technology,2776
+VICI,VICI Properties Inc.,Finance,2774
+CMI,Cummins Inc.,Producer Manufacturing,2770
+ES,Eversource Energy (D/B/A),Utilities,2743
+GLW,Corning Incorporated,Electronic Technology,2727
+ODFL,Old Dominion Freight Line Inc.,Transportation,2721
+AVB,AvalonBay Communities Inc.,Finance,2670
+AMP,Ameriprise Financial Inc.,Finance,2656
+DFS,Discover Financial Services,Finance,2652
+EQR,Equity Residential,Finance,2646
+ENPH,Enphase Energy Inc.,Electronic Technology,2645
+ROST,Ross Stores Inc.,Retail Trade,2625
+PPG,PPG Industries Inc.,Process Industries,2608
+VRSK,Verisk Analytics Inc.,Technology Services,2603
+ALB,Albemarle Corporation,Process Industries,2534
+CPRT,Copart Inc.,Commercial Services,2529
+AME,AMETEK Inc.,Producer Manufacturing,2513
+FRC,FIRST REPUBLIC BANK,Finance,2509
+MTD,Mettler-Toledo International Inc.,Health Technology,2507
+NDAQ,Nasdaq Inc.,Finance,2503
+TROW,T. Rowe Price Group Inc.,Finance,2503
+OKE,ONEOK Inc.,Industrial Services,2480
+KEYS,Keysight Technologies Inc.,Electronic Technology,2470
+HRL,Hormel Foods Corporation,Consumer Non-Durables,2468
+APTV,Aptiv PLC,Producer Manufacturing,2461
+WY,Weyerhaeuser Company,Finance,2456
+LVS,Las Vegas Sands Corp.,Consumer Services,2443
+AWK,American Water Works Company Inc.,Utilities,2443
+SIVB,SVB Financial Group,Finance,2398
+EBAY,eBay Inc.,Retail Trade,2378
+FITB,Fifth Third Bancorp,Finance,2369
+CBRE,CBRE Group Inc,Finance,2361
+K,Kellogg Company,Consumer Non-Durables,2348
+STT,State Street Corporation,Finance,2338
+FANG,Diamondback Energy Inc. – Commmon Stock,Energy Minerals,2337
+EIX,Edison International,Utilities,2301
+GWW,W.W. Grainger Inc.,Distribution Services,2294
+DTE,DTE Energy Company,Utilities,2281
+ROK,Rockwell Automation Inc.,Producer Manufacturing,2267
+MKC,McCormick & Company Incorporated,Consumer Non-Durables,2245
+CTRA,Coterra Energy Inc.,Energy Minerals,2206
+TSCO,Tractor Supply Company,Retail Trade,2183
+WTW,Willis Towers Watson Public Limited Company,Finance,2176
+DHI,D.R. Horton Inc.,Consumer Durables,2170
+EFX,Equifax Inc.,Commercial Services,2157
+CDW,CDW Corporation,Technology Services,2151
+ZBH,Zimmer Biomet Holdings Inc.,Health Technology,2151
+ARE,Alexandria Real Estate Equities Inc.,Finance,2150
+EXR,Extra Space Storage Inc,Finance,2141
+LH,Laboratory Corporation of America Holdings,Health Services,2140
+HIG,Hartford Financial Services Group Inc. (The),Finance,2140
+AEE,Ameren Corporation,Utilities,2132
+WST,West Pharmaceutical Services Inc.,Health Technology,2130
+ETR,Entergy Corporation,Utilities,2122
+LUV,Southwest Airlines Company,Transportation,2109
+BALL,Ball Corporation,Process Industries,2099
+ANSS,ANSYS Inc.,Technology Services,2078
+CHD,Church & Dwight Company Inc.,Consumer Non-Durables,2073
+TTWO,Take-Two Interactive Software Inc.,Consumer Durables,2072
+ULTA,Ulta Beauty Inc.,Retail Trade,2070
+FE,FirstEnergy Corp.,Utilities,2062
+VTR,Ventas Inc.,Finance,2013
+MTCH,Match Group Inc.,Technology Services,2001
+DRE,Duke Realty Corporation,Finance,1997
+CEG,Constellation Energy Corporation,Utilities,1985
+STE,STERIS plc (Ireland),Health Technology,1969
+NTRS,Northern Trust Corporation,Finance,1952
+RJF,Raymond James Financial Inc.,Finance,1950
+FTV,Fortive Corporation,Electronic Technology,1940
+DAL,Delta Air Lines Inc.,Transportation,1937
+MPWR,Monolithic Power Systems Inc.,Electronic Technology,1931
+LYV,Live Nation Entertainment Inc.,Consumer Services,1928
+LEN,Lennar Corporation,Consumer Durables,1926
+VMC,Vulcan Materials Company (Holding Company),Non-Energy Minerals,1915
+PPL,PPL Corporation,Utilities,1902
+IT,Gartner Inc.,Technology Services,1888
+CF,CF Industries Holdings Inc.,Process Industries,1885
+MLM,Martin Marietta Materials Inc.,Non-Energy Minerals,1881
+MAA,Mid-America Apartment Communities Inc.,Finance,1876
+MOS,Mosaic Company (The),Process Industries,1874
+CTLT,Catalent Inc.,Health Technology,1869
+WAT,Waters Corporation,Health Technology,1861
+GRMN,Garmin Ltd.,Electronic Technology,1854
+GPC,Genuine Parts Company,Distribution Services,1848
+CINF,Cincinnati Financial Corporation,Finance,1844
+ALGN,Align Technology Inc.,Health Technology,1841
+VFC,V.F. Corporation,Consumer Non-Durables,1806
+AMCR,Amcor plc,Process Industries,1802
+CMS,CMS Energy Corporation,Utilities,1800
+HPE,Hewlett Packard Enterprise Company,Electronic Technology,1799
+WRB,W.R. Berkley Corporation,Finance,1792
+RF,Regions Financial Corporation,Finance,1790
+CFG,Citizens Financial Group Inc.,Finance,1785
+MRO,Marathon Oil Corporation,Energy Minerals,1780
+FOX,Fox Corporation,Consumer Services,1769
+FOXA,Fox Corporation,Consumer Services,1767
+VRSN,VeriSign Inc.,Technology Services,1766
+EPAM,EPAM Systems Inc.,Technology Services,1753
+CNP,CenterPoint Energy Inc (Holding Co),Utilities,1748
+HBAN,Huntington Bancshares Incorporated,Finance,1746
+URI,United Rentals Inc.,Finance,1741
+PKI,PerkinElmer Inc.,Health Technology,1722
+DOV,Dover Corporation,Producer Manufacturing,1718
+IR,Ingersoll Rand Inc.,Producer Manufacturing,1716
+PWR,Quanta Services Inc.,Industrial Services,1714
+HOLX,Hologic Inc.,Health Technology,1714
+TDY,Teledyne Technologies Incorporated,Electronic Technology,1700
+JBHT,J.B. Hunt Transport Services Inc.,Transportation,1678
+ESS,Essex Property Trust Inc.,Finance,1673
+FLT,FleetCor Technologies Inc.,Commercial Services,1668
+PFG,Principal Financial Group Inc,Finance,1644
+PAYC,Paycom Software Inc.,Technology Services,1639
+KEY,KeyCorp,Finance,1636
+PARA,Paramount Global,Consumer Services,1616
+EXPD,Expeditors International of Washington Inc.,Transportation,1608
+INCY,Incyte Corporation,Health Technology,1607
+ROL,Rollins Inc.,Consumer Services,1601
+BR,Broadridge Financial Solutions Inc.,Technology Services,1585
+BBY,Best Buy Co. Inc.,Retail Trade,1584
+EXPE,Expedia Group Inc.,Consumer Services,1577
+SEDG,SolarEdge Technologies Inc.,Producer Manufacturing,1572
+J,Jacobs Engineering Group Inc.,Industrial Services,1565
+STX,Seagate Technology Holdings PLC,Electronic Technology,1559
+ZBRA,Zebra Technologies Corporation,Electronic Technology,1556
+IP,International Paper Company,Process Industries,1554
+SWK,Stanley Black & Decker Inc.,Consumer Durables,1551
+WAB,Westinghouse Air Brake Technologies Corporation,Producer Manufacturing,1549
+CLX,Clorox Company (The),Consumer Non-Durables,1546
+CAG,ConAgra Brands Inc.,Consumer Non-Durables,1544
+BRO,Brown & Brown Inc.,Finance,1542
+DGX,Quest Diagnostics Incorporated,Health Services,1539
+MOH,Molina Healthcare Inc,Health Services,1516
+COO,The Cooper Companies Inc.,Health Technology,1495
+SWKS,Skyworks Solutions Inc.,Electronic Technology,1492
+TRMB,Trimble Inc.,Electronic Technology,1472
+SYF,Synchrony Financial,Finance,1470
+TER,Teradyne Inc.,Electronic Technology,1468
+ATO,Atmos Energy Corporation,Utilities,1463
+WDC,Western Digital Corporation,Electronic Technology,1460
+AKAM,Akamai Technologies Inc.,Technology Services,1455
+GNRC,Generac Holdlings Inc.,Producer Manufacturing,1448
+L,Loews Corporation,Finance,1444
+NTAP,NetApp Inc.,Electronic Technology,1444
+KMX,CarMax Inc,Retail Trade,1435
+BIO,Bio-Rad Laboratories Inc.,Health Technology,1420
+BXP,Boston Properties Inc.,Finance,1415
+DRI,Darden Restaurants Inc.,Consumer Services,1411
+CAH,Cardinal Health Inc.,Distribution Services,1408
+CPB,Campbell Soup Company,Consumer Non-Durables,1404
+EVRG,Evergy Inc.,Utilities,1402
+APA,APA Corporation,Energy Minerals,1395
+DPZ,Domino’s Pizza Inc,Consumer Services,1394
+LNT,Alliant Energy Corporation,Utilities,1387
+UDR,UDR Inc.,Finance,1385
+FMC,FMC Corporation,Process Industries,1379
+CPT,Camden Property Trust,Finance,1369
+CE,Celanese Corporation Celanese Corporation,Process Industries,1356
+LKQ,LKQ Corporation,Consumer Durables,1352
+FDS,FactSet Research Systems Inc.,Technology Services,1347
+SJM,J.M. Smucker Company (The) New,Consumer Non-Durables,1345
+IRM,Iron Mountain Incorporated (Delaware),Finance,1342
+POOL,Pool Corporation,Distribution Services,1340
+IEX,IDEX Corporation,Producer Manufacturing,1340
+XYL,Xylem Inc.,Producer Manufacturing,1339
+HWM,Howmet Aerospace Inc.,Electronic Technology,1333
+AES,The AES Corporation,Utilities,1327
+LDOS,Leidos Holdings Inc.,Electronic Technology,1320
+PEAK,Healthpeak Properties Inc.,Finance,1318
+OMC,Omnicom Group Inc.,Commercial Services,1313
+PKG,Packaging Corporation of America,Process Industries,1310
+TYL,Tyler Technologies Inc.,Technology Services,1304
+TECH,Bio-Techne Corp,Health Technology,1296
+VTRS,Viatris Inc.,Health Technology,1289
+NLOK,NortonLifeLock Inc.,Technology Services,1286
+TXT,Textron Inc.,Electronic Technology,1284
+CHRW,C.H. Robinson Worldwide Inc.,Transportation,1283
+AVY,Avery Dennison Corporation,Process Industries,1273
+JKHY,Jack Henry & Associates Inc.,Technology Services,1270
+NVR,NVR Inc.,Consumer Durables,1249
+PTC,PTC Inc.,Technology Services,1248
+CTXS,Citrix Systems Inc.,Technology Services,1234
+BEN,Franklin Resources Inc.,Finance,1201
+UAL,United Airlines Holdings Inc.,Transportation,1193
+MGM,MGM Resorts International,Consumer Services,1190
+CBOE,Cboe Global Markets Inc.,Finance,1171
+KIM,Kimco Realty Corporation,Finance,1170
+TFX,Teleflex Incorporated,Health Technology,1164
+EMN,Eastman Chemical Company,Process Industries,1161
+HST,Host Hotels,Finance,1157
+HAS,Hasbro Inc.,Consumer Durables,1151
+NDSN,Nordson Corporation,Producer Manufacturing,1142
+LUMN,Lumen Technologies Inc.,Communications,1124
+TAP,Molson Coors Beverage Company,Consumer Non-Durables,1124
+MAS,Masco Corporation,Producer Manufacturing,1120
+SBNY,Signature Bank,Finance,1119
+NI,NiSource Inc,Utilities,1100
+CCL,Carnival Corporation,Consumer Services,1087
+IPG,Interpublic Group of Companies Inc. (The),Commercial Services,1080
+RE,Everest Re Group Ltd.,Finance,1072
+CRL,Charles River Laboratories International Inc.,Commercial Services,1062
+SNA,Snap-On Incorporated,Consumer Durables,1055
+ABMD,ABIOMED Inc.,Health Technology,1053
+HSIC,Henry Schein Inc.,Distribution Services,1041
+AAP,Advance Auto Parts Inc.,Retail Trade,1040
+WRK,Westrock Company,Process Industries,1031
+QRVO,Qorvo Inc.,Electronic Technology,1024
+MKTX,MarketAxess Holdings Inc.,Finance,1003
+REG,Regency Centers Corporation,Finance,997
+CMA,Comerica Incorporated,Finance,996
+LW,Lamb Weston Holdings Inc.,Consumer Non-Durables,963
+RCL,D/B/A Royal Caribbean Cruises Ltd.,Consumer Services,955
+AIZ,Assurant Inc.,Finance,932
+GL,Globe Life Inc.,Finance,931
+FFIV,F5 Inc.,Electronic Technology,925
+JNPR,Juniper Networks Inc.,Technology Services,920
+ETSY,Etsy Inc.,Retail Trade,918
+NWS,News Corporation,Consumer Services,915
+NWSA,News Corporation,Consumer Services,913
+PHM,PulteGroup Inc.,Consumer Durables,890
+DISH,DISH Network Corporation,Consumer Services,880
+NRG,NRG Energy Inc.,Utilities,880
+RHI,Robert Half International Inc.,Commercial Services,879
+CZR,Caesars Entertainment Inc.,Consumer Services,871
+WHR,Whirlpool Corporation,Consumer Durables,862
+BWA,BorgWarner Inc.,Producer Manufacturing,848
+AAL,American Airlines Group Inc.,Transportation,846
+SEE,Sealed Air Corporation,Process Industries,839
+LNC,Lincoln National Corporation,Finance,837
+OGN,Organon & Co.,Health Technology,836
+ALLE,Allegion plc,Producer Manufacturing,833
+HII,Huntington Ingalls Industries Inc.,Electronic Technology,832
+AOS,A.O. Smith Corporation,Producer Manufacturing,824
+NLSN,Nielsen N.V.,Commercial Services,822
+TPR,Tapestry Inc.,Retail Trade,812
+ZION,Zions Bancorporation N.A.,Finance,804
+MHK,Mohawk Industries Inc.,Non-Energy Minerals,769
+FBHS,Fortune Brands Home & Security Inc.,Producer Manufacturing,766
+XRAY,DENTSPLY SIRONA Inc.,Health Technology,764
+NWL,Newell Brands Inc.,Producer Manufacturing,759
+PNW,Pinnacle West Capital Corporation,Utilities,758
+FRT,Federal Realty Investment Trust,Finance,758
+IVZ,Invesco Ltd,Finance,751
+DVA,DaVita Inc.,Health Services,740
+PNR,Pentair plc.,Producer Manufacturing,732
+DXC,DXC Technology Company,Technology Services,714
+BBWI,Bath & Body Works Inc.,Retail Trade,704
+CDAY,Ceridian HCM Holding Inc.,Technology Services,692
+UHS,Universal Health Services Inc.,Health Services,690
+RL,Ralph Lauren Corporation,Retail Trade,647
+WYNN,Wynn Resorts Limited,Consumer Services,639
+VNO,Vornado Realty Trust,Finance,545
+ALK,Alaska Air Group Inc.,Transportation,511
+NCLH,Norwegian Cruise Line Holdings Ltd.,Consumer Services,490
+IPGP,IPG Photonics Corporation,Electronic Technology,478
+PENN,Penn National Gaming Inc.,Consumer Services,468
+PVH,PVH Corp.,Consumer Non-Durables,408
+UAA,Under Armour Inc.,Consumer Non-Durables,393
+UA,Under Armour Inc.,Consumer Non-Durables,390
+

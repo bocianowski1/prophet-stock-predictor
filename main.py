@@ -1,35 +1,35 @@
 import streamlit as st
-from datetime import date
 import pandas as pd
-import yfinance as yf
-from prophet import Prophet
-from prophet.plot import plot_plotly
-from plotly import graph_objs
 
 from pages.prediction_page import prediction_page
 from pages.compare_page import compare_page
 from pages.news_page import news_page
 from pages.info_page import info_page
+from pages.about_page import about_page
 
+tickers = pd.read_csv('data/marketcap.csv')['Ticker']
 
-st.title('Stock Dashboard')
+st.title('S&P 500 Stock Dashboard')
 tabs_list = [
     'Predict Future Price',
     'Comapare',
     'Latest News',
-    'Additional Info'
+    'Additional Info',
+    'About this Project'
     ]
 tabs = st.tabs(tabs_list)
 
 with tabs[0]:
-    prediction_page()
+    prediction_page(tickers)
 
 with tabs[1]:
-    compare_page()
+    compare_page(tickers)
 
 with tabs[2]:
-    news_page()
+    news_page(tickers)
 
 with tabs[3]:
-    info_page()
+    info_page(tickers)
 
+with tabs[4]:
+    about_page()
