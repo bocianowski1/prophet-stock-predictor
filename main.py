@@ -7,7 +7,7 @@ from pages.news_page import news_page
 from pages.info_page import info_page
 from pages.about_page import about_page
 
-tickers = pd.read_csv('data/marketcap.csv')['Ticker']
+tickers = pd.read_csv('data/marketcap.csv')
 
 st.title('S&P 500 Stock Dashboard')
 tabs_list = [

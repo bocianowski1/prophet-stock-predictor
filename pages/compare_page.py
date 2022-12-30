@@ -2,12 +2,12 @@ import streamlit as st
 from datetime import date
 import pandas as pd
 import yfinance as yf
-from prophet.plot import plot_plotly
+import numpy as np
 from plotly import graph_objs
 
-def compare_page(tickers):
+def compare_page(tickers: pd.DataFrame):
     st.title('Compare Stocks')
-    selected_stocks = st.multiselect('Select companies to compare', tickers)
+    selected_stocks = st.multiselect('Select companies to compare', tickers['Ticker'])
     
     with st.expander('Ticker not in the list?'):
         new_ticker = st.text_input('Ticker', key='new ticker to compare')
@@ -15,39 +15,81 @@ def compare_page(tickers):
     if len(new_ticker) > 0:
         selected_stocks.append(new_ticker)
 
-    start_date_col, end_date_col = st.columns(2)
-    start_date = start_date_col.date_input('Start Date', value=date(2015, 1, 1), key='compare start')
-    end_date = end_date_col.date_input('End Date', value=date.today(), key='compare end')
+    col1, col2 = st.columns(2)
+    start_date = col1.date_input('Start Date', value=date(2015, 1, 1), key='compare start')
+    end_date = col2.date_input('End Date', value=date.today(), key='compare end')
 
+    def name_from(ticker: str) -> str:
+        ticker = ticker.upper()
+        try:
+            name: str = tickers.loc[tickers['Ticker'] == ticker].iloc[0]['Name']
+            if len(name) > 15:
+                return ticker
+            else:
+                return name
     
-    def cumulative_returns(df: pd.DataFrame):
+        except:
+            return ticker
+
+    def readable_from(ticker_list: list) -> str:
+        if len(ticker_list) == 0:
+            return ''
+        return ''.join(name_from(ticker) + ', ' for ticker in ticker_list)[:-2]
+    
+    def all_zero_columns(df: pd.DataFrame, col: str) -> bool:
+        return np.all(df[col] == 0.0)
+
+    def cumulative_returns(df: pd.DataFrame) -> pd.DataFrame:
         relative = df.pct_change()
         cumulative = (1 + relative).cumprod() - 1
         cumulative = cumulative.fillna(0)
         return cumulative
 
+    @st.cache
     def get_stocks() -> pd.DataFrame:
-        data = cumulative_returns(yf.download(selected_stocks, start_date, end_date))['Close']
-        # data.reset_index(inplace=True)
+        data = cumulative_returns(
+            yf.download(selected_stocks, start_date, end_date)
+        )
         return data
     
     def plot_data(stocks: pd.DataFrame):
         fig = graph_objs.Figure()
 
-        # print(f'\n\nType {(stocks)}\n')
-        # print(f'LENGTH OF STOCKS {len(stocks)}')
-        # for stock in stocks:
-        #     print("HEYHEY", stock, type(stock))
-        #     # fig.add_trace(graph_objs.Scatter(x=stock['Date'], y=stock['Close'], name='Closing Price'))
+        dates = stocks.reset_index()['Date']
+        stocks = stocks['Close']
+        gibberish_stocks = False
 
-        # fig.add_trace(graph_objs.Scatter(x=stocks['Date'], y=stocks['Close'], name='Close Price'))
-        # # fig.add_trace(graph_objs.Scatter(x=stocks['Date'], y=stocks['Close'], name='Closing Price'))
-        fig.layout.update(title_text=f"Closing Price of {selected_stocks}", xaxis_rangeslider_visible=True)
+        if len(selected_stocks) == 1:
+            fig.add_trace(graph_objs.Scatter(
+                x=dates, y=stocks,
+                name=readable_from(selected_stocks[0])
+            ))
+        else:
+            for col in stocks:
+                if not all_zero_columns(stocks, col):
+                    fig.add_trace(graph_objs.Scatter(x=dates, y=stocks[col], name=name_from(col)))
+                else:
+                    gibberish_stocks = True
+
+        fig.layout.update(title_text=
+            f"Closing Price for: {readable_from(selected_stocks[:-1]) if gibberish_stocks else readable_from(selected_stocks)}",
+            xaxis_rangeslider_visible=True
+        )
         st.plotly_chart(fig)
 
+    
     if len(selected_stocks) > 0:
         data = get_stocks()
-        st.line_chart(data)
+        plot_data(data)
+        # try:
+        #     print('success')
+        #     plot_data(data)
+        # except:
+        #     try:
+        #         print('line chart')
+        #         st.line_chart(data)
+        #     except:
+        #         st.text('There was an error visualizing the data.')
         
 
         
