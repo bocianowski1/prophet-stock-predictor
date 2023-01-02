@@ -15,3 +15,4 @@ yfinance>=0.1.94
 plotly==5.11.0
 streamlit-extras==0.2.4
 streamlit-option-menu==0.3.2
+-e git+https://github.com/bocianowski1/prophet.git@419ee68ac6b218b7a3f06a9ddaa6bc08041be1d6#egg=prophet&subdirectory=python
