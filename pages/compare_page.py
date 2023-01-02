@@ -5,9 +5,31 @@ import yfinance as yf
 import numpy as np
 from plotly import graph_objs
 
-# def compare_page(tickers: pd.DataFrame):
-tickers = pd.read_csv('data/marketcap.csv')
+from streamlit_option_menu import option_menu
+from streamlit_extras.switch_page_button import switch_page
+
 st.title('Compare Stocks')
+pages = {
+    'Home': 'main',
+    'Predict': 'prediction_page',
+    'Compare': 'compare_page',
+    'Info': 'info_page',
+    'News': 'news_page'
+}
+
+selected_page = option_menu(
+    menu_title=None,
+    icons=['house', 'piggy-bank', 'search', 'info-circle', 'newspaper'],
+    options=list(pages.keys()),
+    default_index=2,
+    orientation='horizontal'
+)
+
+for key, value in pages.items():
+    if selected_page == key and selected_page != 'Compare':
+        switch_page(value)
+
+tickers = pd.read_csv('data/marketcap.csv')
 selected_stocks = st.multiselect('Select companies to compare', tickers['Ticker'])
 
 with st.expander('Ticker not in the list?'):

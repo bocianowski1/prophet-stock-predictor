@@ -7,10 +7,43 @@ from prophet import Prophet
 from prophet.plot import plot_plotly
 from plotly import graph_objs
 
-# def prediction_page(tickers: pd.DataFrame):
-tickers = pd.read_csv('data/marketcap.csv')
+from streamlit_option_menu import option_menu
+from streamlit_extras.switch_page_button import switch_page
+from streamlit_extras.add_vertical_space import add_vertical_space
+
+
 st.title('Predict Stock Price')
-selected_stock = st.selectbox('Select a company', tickers['Ticker'], key='predict select')
+pages = {
+    'Home': 'main',
+    'Predict': 'prediction_page',
+    'Compare': 'compare_page',
+    'Info': 'info_page',
+    'News': 'news_page'
+}
+
+selected_page = option_menu(
+    menu_title=None,
+    icons=['house', 'piggy-bank', 'search', 'info-circle', 'newspaper'],
+    options=list(pages.keys()),
+    default_index=1,
+    orientation='horizontal',
+)
+
+for key, value in pages.items():
+    if selected_page == key and selected_page != 'Predict':
+        switch_page(value)
+
+
+tickers = pd.read_csv('data/marketcap.csv')
+ready = False
+
+col1, col2 = st.columns([7, 1])
+selected_stock = col1.selectbox('Select a company', tickers['Ticker'], key='predict select')
+for _ in range(2):
+    col2.write('')
+if col2.button('Select'):
+    ready = True
+
 
 with st.expander('Ticker not in the list?'):
     new_ticker = st.text_input('Ticker', key='new ticker to predict')
@@ -29,51 +62,50 @@ def get_stock(ticker) -> pd.DataFrame:
     return data
 
 
-
 if len(new_ticker) > 0:
+    ready = True
     stock = get_stock(new_ticker)['Close']
     if len(stock) > 0:
         selected_stock = new_ticker
     else:
         st.warning(f'{new_ticker} does not exist')
     
+if ready:
+    with st.spinner('Fetching Stock Data'):
+        data = get_stock(selected_stock)
 
+    def plot_data():
+        fig = graph_objs.Figure()
+        fig.add_trace(graph_objs.Scatter(x=data['Date'], y=data['Open'], name='Opening Price'))
+        fig.add_trace(graph_objs.Scatter(x=data['Date'], y=data['Close'], name='Closing Price'))
+        fig.layout.update(title_text=f"{selected_stock.upper()}'s Opening/Closing Price", xaxis_rangeslider_visible=True)
+        st.plotly_chart(fig, use_container_width=True)
 
-with st.spinner('Fetching Stock Data'):
-    data = get_stock(selected_stock)
+    with st.expander('Show Opening/Closing Price'):
+        plot_data()
 
-def plot_data():
-    fig = graph_objs.Figure()
-    fig.add_trace(graph_objs.Scatter(x=data['Date'], y=data['Open'], name='Opening Price'))
-    fig.add_trace(graph_objs.Scatter(x=data['Date'], y=data['Close'], name='Closing Price'))
-    fig.layout.update(title_text=f"{selected_stock.upper()}'s Opening/Closing Price", xaxis_rangeslider_visible=True)
-    st.plotly_chart(fig, use_container_width=True)
+    train_data = data[['Date', 'Close']]
+    train_data = train_data.rename(columns={
+        'Date': 'ds',
+        'Close': 'y'
+    })
 
-with st.expander('Show Opening/Closing Price'):
-    plot_data()
+    model = Prophet()
+    model.fit(train_data)
 
-train_data = data[['Date', 'Close']]
-train_data = train_data.rename(columns={
-    'Date': 'ds',
-    'Close': 'y'
-})
+    st.subheader(f'Forecast for {selected_stock.upper()}')
+    num_years = st.slider('Years of prediction', 1, 5)
+    period = num_years * 365
+    predicted_data = model.make_future_dataframe(periods=period)
 
-model = Prophet()
-model.fit(train_data)
+    with st.spinner('Loading Prediction'):
+        prediction = model.predict(predicted_data)
 
-st.subheader(f'Forecast for {selected_stock.upper()}')
-num_years = st.slider('Years of prediction', 1, 5)
-period = num_years * 365
-predicted_data = model.make_future_dataframe(periods=period)
+    prediction_figure1 = plot_plotly(model, prediction, xlabel='Year', ylabel='Price in USD')
+    st.plotly_chart(prediction_figure1, use_container_width=True)
 
-with st.spinner('Loading Prediction'):
-    prediction = model.predict(predicted_data)
-
-prediction_figure1 = plot_plotly(model, prediction, xlabel='Year', ylabel='Price in USD')
-st.plotly_chart(prediction_figure1, use_container_width=True)
-
-if st.button('Show Forecast Components'):
-    st.subheader(f'Forecast Components for {selected_stock}')
-    prediction_figure2 = model.plot_components(prediction)
-    st.write(prediction_figure2)
+    if st.button('Show Forecast Components'):
+        st.subheader(f'Forecast Components for {selected_stock}')
+        prediction_figure2 = model.plot_components(prediction)
+        st.write(prediction_figure2)
 
