@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
+import plotly.express as px
 
-from pages.prediction_page import prediction_page
-from pages.compare_page import compare_page
-from pages.news_page import news_page
-from pages.info_page import info_page
-from pages.about_page import about_page
 
 tickers = pd.read_csv('data/marketcap.csv')
 
@@ -15,21 +12,46 @@ tabs_list = [
     'Additional Info',
     'Comapare',
     'Latest News',
-    'About this Project'
     ]
 tabs = st.tabs(tabs_list)
+pages = ['prediction_page', 'compare_page', 'info_page', 'news_page']
 
-with tabs[0]:
-    prediction_page(tickers)
+df = px.data.gapminder()
+fig = px.scatter(
+    df.query("year==2007"),
+    x="gdpPercap",
+    y="lifeExp",
+    size="pop",
+    color="continent",
+    hover_name="country",
+    log_x=True,
+    size_max=60,
+)
+col1, col2 = st.columns([2, 1])
+col1.plotly_chart(fig, use_container_width=True)
+col2.subheader('Predict and Analyze Future Stock Prices')
+col2.write("Predict the closing price of a stock from one of the S&P 500 listed or other populare companies. This is possible because of FaceBook's Prophet.")
 
-with tabs[1]:
-    info_page(tickers)
+col1, col2 = st.columns([1, 2])
+col1.subheader("Visualize and Compare the Behavoir Stocks")
+col1.write("Compare multiple S&P 500 stocks.")
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=["a", "b", "c"])
+col2.bar_chart(chart_data, use_container_width=True)
 
-with tabs[2]:
-    compare_page(tickers)
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
 
-with tabs[3]:
-    news_page(tickers)
+col1, col2 = st.columns([2, 1])
+col1.map(df)
+col2.subheader("Get the Latest News and Financial Analytics")
+col2.write("ourhgeourhgeourgheourghoeurghwourghwourghwourghowu")
 
-with tabs[4]:
-    about_page()
+for idx, page in enumerate(pages):
+    with tabs[idx]:
+        name = page.split("_")[0].capitalize()
+        st.markdown(f'<a href="{page}" target="_self">{name}</a>', unsafe_allow_html=True)
+
+st.caption('Created by Torger Bocianowski')
