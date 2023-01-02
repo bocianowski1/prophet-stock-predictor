@@ -12,3 +12,6 @@ tqdm>=4.36.1
 wheel>=0.37.0
 
 yfinance>=0.1.94
+plotly==5.11.0
+streamlit-extras==0.2.4
+streamlit-option-menu==0.3.2
