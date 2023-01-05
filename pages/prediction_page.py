@@ -42,6 +42,18 @@ selected_stock = selected_stock.split(' ')[0]
 with st.expander('Ticker not in the list?'):
     new_ticker = st.text_input('Ticker', key='new ticker to predict')
 
+def name_from(ticker: str) -> str:
+    ticker = ticker.upper()
+    try:
+        name: str = tickers.loc[tickers['Ticker'] == ticker].iloc[0]['Name']
+        if len(name) > 15:
+            return name.split(' ')[0]
+        else:
+            return name
+
+    except:
+        return ticker
+
 def all_zero_columns(df: pd.DataFrame, col: str) -> bool:
     return np.all(df[col] == 0.0)
 
@@ -96,9 +108,15 @@ with st.spinner('Loading Prediction'):
 
 prediction_figure1 = plot_plotly(model, prediction, xlabel='Year', ylabel='Price in USD')
 st.plotly_chart(prediction_figure1, use_container_width=True)
+st.markdown("""<p style='font-size: 12px;'>
+    This is a form of <a href='https://www.investopedia.com/terms/t/technicalanalysis.asp' target='_blank'>
+    technical analysis</a> prediction model draws a best fit line through the datapoints and, 
+    based on several factors (see forecast components below), tries to predict the future price.
+    This is why the predictions may be completely wrong sometimes.</p>
+""", unsafe_allow_html=True)
 
 if st.button('Show Forecast Components'):
-    st.subheader(f'Forecast Components for {selected_stock}')
+    st.subheader(f'Forecast Components for {name_from(selected_stock)}')
     prediction_figure2 = model.plot_components(prediction)
     st.write(prediction_figure2)
 
