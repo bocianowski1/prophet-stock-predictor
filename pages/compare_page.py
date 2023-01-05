@@ -115,7 +115,7 @@ def plot_data(streamlit: st, stocks: pd.DataFrame, selected_stocks: list, height
 
 if len(selected_stocks) > 0:
     data = get_stocks(selected_stocks)
-    plot_data(st, data, selected_stocks)
+    plot_data(st, data, selected_stocks, None)
     # try:
     #     print('success')
     #     plot_data(data)
