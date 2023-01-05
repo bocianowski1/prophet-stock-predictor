@@ -67,7 +67,7 @@ if len(new_ticker) > 0:
 with st.spinner('Fetching Stock Data'):
     data = get_stock(selected_stock)
 
-def plot_data():
+def plot_data(data):
     fig = graph_objs.Figure()
     fig.add_trace(graph_objs.Scatter(x=data['Date'], y=data['Open'], name='Opening Price'))
     fig.add_trace(graph_objs.Scatter(x=data['Date'], y=data['Close'], name='Closing Price'))
@@ -75,7 +75,7 @@ def plot_data():
     st.plotly_chart(fig, use_container_width=True)
 
 with st.expander('Show Opening/Closing Price'):
-    plot_data()
+    plot_data(data)
 
 train_data = data[['Date', 'Close']]
 train_data = train_data.rename(columns={
