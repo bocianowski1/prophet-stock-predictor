@@ -46,6 +46,7 @@ def name_from(ticker: str) -> str:
             return name
 
     except:
+        print('WOWOWWOWOWOOWOW')
         return ticker
 
 
@@ -56,8 +57,8 @@ col1.write("""
     stock using the FaceBook [Prophet]('https://facebook.github.io/prophet/'). 
     Adjust the forecast duration and examine the forecast components.
 """)
-ticker = 'AAPL'
-data = get_stock(ticker)
+aapl = 'AAPL'
+data = get_stock(aapl)
 
 def plot_closing_price(data, ticker, height):
     fig = graph_objs.Figure()
@@ -65,8 +66,8 @@ def plot_closing_price(data, ticker, height):
     fig.layout.update(title_text=f"{ticker.upper()}'s Closing Price", xaxis_rangeslider_visible=True)
     fig.update_layout(height=height)
     col2.plotly_chart(fig, use_container_width=True)
-col2.subheader(f'Example: {name_from(ticker)}')
-plot_closing_price(data, ticker, 400)
+col2.subheader(f'Example: {name_from(aapl)}')
+plot_closing_price(data, aapl, 400)
 # prediction_figure1 = plot_plotly(model, prediction, xlabel='Year', ylabel='Price in USD', figsize=(300, 400))
 # col2.plotly_chart(prediction_figure1, use_container_width=True)
 
@@ -77,8 +78,6 @@ col1.markdown("""
     Compare multiple S&P 500 stocks with beautiful, interactive [plotly]('https://plotly.com/') graphs. 
     Add companies several companies and choose the time interval.
 """)
-
-
 
 def readable_from(ticker_list: list) -> str:
     if len(ticker_list) == 0:
@@ -100,7 +99,6 @@ def get_stocks(stocks) -> pd.DataFrame:
         yf.download(stocks, date(2018, 12, 1), date.today())
     )
     return data
-
 
 def plot_data(streamlit: st, stocks: pd.DataFrame, selected_stocks: list, height: int=600):
     fig = graph_objs.Figure()
