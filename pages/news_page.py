@@ -13,8 +13,7 @@ pages = {
     'Info': 'info_page',
     'News': 'news_page'
 }
-# def navbar():
-# with st.sidebar:
+
 selected_page = option_menu(
     menu_title=None,
     icons=['house', 'piggy-bank', 'search', 'info-circle', 'newspaper'],
@@ -27,11 +26,12 @@ for key, value in pages.items():
     if selected_page == key and selected_page != 'News':
         switch_page(value)
 
-# def news_page(tickers: pd.DataFrame):
 tickers = pd.read_csv('data/marketcap.csv')
+tickers['Both'] = tickers['Ticker'] + ' - ' + tickers['Name']
 
 
-stock = st.selectbox('Select a company', tickers['Ticker'], key='news select')
+stock = st.selectbox('Select a company', tickers['Both'], key='news select')
+stock = stock.split(' ')[0]
 ticker = yf.Ticker(stock)
 
 def get_news_headers(news):
@@ -41,10 +41,9 @@ def get_news_headers(news):
             img = article['thumbnail']['resolutions'][0]['url']
             col1.image(img, use_column_width=True)
         except:
-            st.text('No image')
+            col1.text('No image')
         col2.subheader(f"[{article['title']}]({article['link']})")            
 
 if len(stock) > 0:
     with st.spinner('Loading News...'):
         get_news_headers(ticker.news)
-        # st.write(ticker.news)

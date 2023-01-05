@@ -9,7 +9,6 @@ from plotly import graph_objs
 
 from streamlit_option_menu import option_menu
 from streamlit_extras.switch_page_button import switch_page
-from streamlit_extras.add_vertical_space import add_vertical_space
 
 
 st.title('Predict Stock Price')
@@ -35,9 +34,10 @@ for key, value in pages.items():
 
 
 tickers = pd.read_csv('data/marketcap.csv')
+tickers['Both'] = tickers['Ticker'] + ' - ' + tickers['Name']
 
-selected_stock = st.selectbox('Select a company', tickers['Ticker'], key='predict select')
-
+selected_stock = st.selectbox('Select a company', tickers['Both'], key='predict select')
+selected_stock = selected_stock.split(' ')[0]
 
 with st.expander('Ticker not in the list?'):
     new_ticker = st.text_input('Ticker', key='new ticker to predict')

@@ -8,6 +8,7 @@ from plotly import graph_objs
 from streamlit_option_menu import option_menu
 from streamlit_extras.switch_page_button import switch_page
 
+
 st.title('Compare Stocks')
 pages = {
     'Home': 'main',
@@ -30,7 +31,11 @@ for key, value in pages.items():
         switch_page(value)
 
 tickers = pd.read_csv('data/marketcap.csv')
-selected_stocks = st.multiselect('Select companies to compare', tickers['Ticker'])
+tickers['Both'] = tickers['Ticker'] + ' - ' + tickers['Name']
+
+
+selected_stocks = st.multiselect('Select companies to compare', tickers['Both'])
+selected_stocks = [stock.split(' ')[0] for stock in selected_stocks]
 
 with st.expander('Ticker not in the list?'):
     new_ticker = st.text_input('Ticker', key='new ticker to compare')
@@ -42,12 +47,13 @@ col1, col2 = st.columns(2)
 start_date = col1.date_input('Start Date', value=date(2015, 1, 1), key='compare start')
 end_date = col2.date_input('End Date', value=date.today(), key='compare end')
 
+
 def name_from(ticker: str) -> str:
     ticker = ticker.upper()
     try:
         name: str = tickers.loc[tickers['Ticker'] == ticker].iloc[0]['Name']
         if len(name) > 15:
-            return ticker
+            return name.split(' ')[0]
         else:
             return name
 
@@ -69,13 +75,13 @@ def cumulative_returns(df: pd.DataFrame) -> pd.DataFrame:
     return cumulative
 
 @st.cache
-def get_stocks() -> pd.DataFrame:
+def get_stocks(stocks) -> pd.DataFrame:
     data = cumulative_returns(
-        yf.download(selected_stocks, start_date, end_date)
+        yf.download(stocks, start_date, end_date)
     )
     return data
 
-def plot_data(stocks: pd.DataFrame):
+def plot_data(streamlit: st, stocks: pd.DataFrame, selected_stocks: list, height: int, show_text: bool=True):
     fig = graph_objs.Figure()
 
     dates = stocks.reset_index()['Date']
@@ -93,17 +99,23 @@ def plot_data(stocks: pd.DataFrame):
                 fig.add_trace(graph_objs.Scatter(x=dates, y=stocks[col], name=name_from(col)))
             else:
                 gibberish_stocks = True
+    if show_text:
+        fig.layout.update(title_text=
+            f"Closing Price for: {readable_from(selected_stocks[:-1]) if gibberish_stocks else readable_from(selected_stocks)}",
+            xaxis_rangeslider_visible=True
+        )
+    else: 
+        fig.layout.update(title_text='',
+            xaxis_rangeslider_visible=True)
 
-    fig.layout.update(title_text=
-        f"Closing Price for: {readable_from(selected_stocks[:-1]) if gibberish_stocks else readable_from(selected_stocks)}",
-        xaxis_rangeslider_visible=True
-    )
-    st.plotly_chart(fig)
+    if height:
+        fig.update_layout(height=height)
+    streamlit.plotly_chart(fig, use_container_width=True)
 
 
 if len(selected_stocks) > 0:
-    data = get_stocks()
-    plot_data(data)
+    data = get_stocks(selected_stocks)
+    plot_data(st, data, selected_stocks)
     # try:
     #     print('success')
     #     plot_data(data)

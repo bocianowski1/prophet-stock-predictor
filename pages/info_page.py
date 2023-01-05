@@ -33,45 +33,48 @@ for key, value in pages.items():
 
 
 tickers = pd.read_csv('data/marketcap.csv')
+tickers['Both'] = tickers['Ticker'] + ' - ' + tickers['Name']
 tabs_list = [
     'Balance Sheet',
     'Cash Flow',
     'Earnings',
 ]
 # try:
-stock = st.selectbox('Select a company', tickers['Ticker'], key='info select')
+stock = st.selectbox('Select a company', tickers['Both'], key='info select')
+stock = stock.split(' ')[0]
+
 ticker = yf.Ticker(stock)
 tabs = st.tabs(tabs_list)
 
 msg = 'Load Balance Sheet, Cash Flow Statement and Earnings'
     
-if st.button(msg):
-    with st.spinner('Please wait'):
-        with tabs[0]:
-            st.subheader('Balance Sheet')
-            df = ticker.balance_sheet
-            df.columns = [date.strftime("%d/%m/%Y") for date in df.columns]
-            df = df.fillna(0)
-            styled = df.style.format("{:,}")
-            st.dataframe(styled, use_container_width=True)
 
-        with tabs[1]:
-            st.subheader('Cash Flow')
-            df = ticker.cashflow
-            df.columns = [date.strftime("%d/%m/%Y") for date in df.columns]
-            df = df.fillna(0)
-            styled = df.style.format("{:,}")
-            st.dataframe(styled, use_container_width=True)
+with st.spinner('Please wait, this might take a few seconds...'):
+    with tabs[0]:
+        st.subheader('Balance Sheet')
+        df = ticker.balance_sheet
+        df.columns = [date.strftime("%d/%m/%Y") for date in df.columns]
+        df = df.fillna(0)
+        styled = df.style.format("{:,}")
+        st.dataframe(styled, use_container_width=True)
 
-        with tabs[2]:
-            st.subheader('Earnings')
-            df = ticker.earnings
-            df = df.fillna(0)
-            styled = df.style.format("{:,}")
-            col1, col2 = st.columns(2)
-            col1.dataframe(styled, use_container_width=True)
-            col2.bar_chart(df, use_container_width=True)
-        
+    with tabs[1]:
+        st.subheader('Cash Flow')
+        df = ticker.cashflow
+        df.columns = [date.strftime("%d/%m/%Y") for date in df.columns]
+        df = df.fillna(0)
+        styled = df.style.format("{:,}")
+        st.dataframe(styled, use_container_width=True)
+
+    with tabs[2]:
+        st.subheader('Earnings')
+        df = ticker.earnings
+        df = df.fillna(0)
+        styled = df.style.format("{:,}")
+        col1, col2 = st.columns(2)
+        col1.dataframe(styled, use_container_width=True)
+        col2.bar_chart(df, use_container_width=True)
+    
 
     # reset = df.reset_index()
     # print(reset)
