@@ -81,7 +81,7 @@ def get_stocks(stocks) -> pd.DataFrame:
     )
     return data
 
-def plot_data(streamlit: st, stocks: pd.DataFrame, selected_stocks: list, height: int, show_text: bool=True):
+def plot_data(streamlit: st, stocks: pd.DataFrame, selected_stocks: list, height: int=600):
     fig = graph_objs.Figure()
 
     dates = stocks.reset_index()['Date']
@@ -99,14 +99,11 @@ def plot_data(streamlit: st, stocks: pd.DataFrame, selected_stocks: list, height
                 fig.add_trace(graph_objs.Scatter(x=dates, y=stocks[col], name=name_from(col)))
             else:
                 gibberish_stocks = True
-    if show_text:
-        fig.layout.update(title_text=
-            f"Closing Price for: {readable_from(selected_stocks[:-1]) if gibberish_stocks else readable_from(selected_stocks)}",
-            xaxis_rangeslider_visible=True
-        )
-    else: 
-        fig.layout.update(title_text='',
-            xaxis_rangeslider_visible=True)
+    
+    fig.layout.update(title_text=
+        f"Closing Price for: {readable_from(selected_stocks[:-1]) if gibberish_stocks else readable_from(selected_stocks)}",
+        xaxis_rangeslider_visible=True
+    )
 
     if height:
         fig.update_layout(height=height)

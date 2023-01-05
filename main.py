@@ -50,7 +50,7 @@ col1.markdown("""
 example_stocks = ['MSFT', 'TSLA']
 col2.subheader(f'{example_stocks[0]} vs {example_stocks[1]}')
 example_data = get_stocks(example_stocks)
-plot_data(col2, example_data, example_stocks, height=400, show_text=False)
+plot_data(col2, example_data, example_stocks, height=400)
 
 
 col1, col2 = st.columns([1, 2])
