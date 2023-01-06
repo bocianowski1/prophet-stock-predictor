@@ -107,6 +107,8 @@ def plot_data(streamlit: st, stocks: pd.DataFrame, selected_stocks: list, height
 
     if height:
         fig.update_layout(height=height)
+    fig.update_xaxes(title_text='Year')
+    fig.update_yaxes(title_text='Cumulative Returns')
     streamlit.plotly_chart(fig, use_container_width=True)
 
 

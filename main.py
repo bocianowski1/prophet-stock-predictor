@@ -7,6 +7,7 @@ from plotly import graph_objs
 
 from streamlit_option_menu import option_menu
 from streamlit_extras.switch_page_button import switch_page
+from streamlit_extras.add_vertical_space import add_vertical_space
 
 st.title('S&P 500 Stock Dashboard')
 pages = {
@@ -46,17 +47,16 @@ def name_from(ticker: str) -> str:
             return name
 
     except:
-        print('WOWOWWOWOWOOWOW')
         return ticker
 
 
 col1, col2 = st.columns([1, 2])
 col1.subheader('Predict and Analyze Future Stock Prices')
 col1.write("""
-    Predict the future closing price of an S&P 500 listed 
-    stock using the FaceBook [Prophet]('https://facebook.github.io/prophet/'). 
+    Predict the future closing price of an S&P 500 listed stock using the FaceBook 
+    <a href='https://facebook.github.io/prophet/' target='_blank'>Prophet</a>. 
     Adjust the forecast duration and examine the forecast components.
-""")
+""", unsafe_allow_html=True)
 aapl = 'AAPL'
 data = get_stock(aapl)
 
@@ -73,11 +73,13 @@ plot_closing_price(data, aapl, 400)
 
 
 col1, col2 = st.columns([1, 2])
-col1.subheader("Visualize and Compare the Behavoir Stocks")
+col1.subheader("Visualize and Compare the Behavoir of Stocks")
 col1.markdown("""
-    Compare multiple S&P 500 stocks with beautiful, interactive [plotly]('https://plotly.com/') graphs. 
-    Add companies several companies and choose the time interval.
-""")
+    <p>Compare multiple S&P 500 stocks with beautiful, interactive 
+    <a href='https://plotly.com/' target='_blank'>Plotly</a> 
+    graphs. Add several companies and choose the time interval.</p>
+""", unsafe_allow_html=True)
+
 
 def readable_from(ticker_list: list) -> str:
     if len(ticker_list) == 0:
@@ -138,14 +140,19 @@ col1, col2 = st.columns([1, 2])
 col1.subheader("Get the Latest News and Financial Analytics")
 col1.write("""
     Retrieve insightful information i.e. the cash flow of a company of your choice 
-    and the latest news regarding a given company from [Yahoo Finance]('https://finance.yahoo.com/').
-""")
+    and the latest news regarding a given company from 
+    <a href='https://finance.yahoo.com/' target='_blank'>Yahoo Finance</a>.
+""", unsafe_allow_html=True)
 
 ticker = yf.Ticker('GOOG')
 col2.subheader(f'Latest News Example: {name_from("GOOG")}')
-col2.write('')
+for i in range(4):
+    col2.write('')
 for i in range(3):
-    col2.markdown(f"[{ticker.news[i]['title']}]({ticker.news[i]['link']})")
+    title = ticker.news[i]['title']
+    link = ticker.news[i]['link']
+    col2.markdown("<a href="f'{link}'" target='_blank' style='font-size: 20px; text-decoration: none;'>"f'{title}'"</a>", unsafe_allow_html=True)
+    # col2.markdown(f"[{ticker.news[i]['title']}]({ticker.news[i]['link']})")
 
 st.caption('Created by Torger Bocianowski')
 
