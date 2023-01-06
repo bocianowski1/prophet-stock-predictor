@@ -67,15 +67,15 @@ def plot_closing_price(data, ticker, height):
     fig.update_layout(height=height)
     col2.plotly_chart(fig, use_container_width=True)
 col2.subheader(f'Example: {name_from(aapl)}')
+for i in range(2):
+    col2.write('')
 plot_closing_price(data, aapl, 400)
-# prediction_figure1 = plot_plotly(model, prediction, xlabel='Year', ylabel='Price in USD', figsize=(300, 400))
-# col2.plotly_chart(prediction_figure1, use_container_width=True)
 
 
 col1, col2 = st.columns([1, 2])
 col1.subheader("Visualize and Compare the Behavoir of Stocks")
 col1.markdown("""
-    <p>Compare multiple S&P 500 stocks with beautiful, interactive 
+    <p>Compare the cumulative return of multiple S&P 500 stocks with beautiful, interactive 
     <a href='https://plotly.com/' target='_blank'>Plotly</a> 
     graphs. Add several companies and choose the time interval.</p>
 """, unsafe_allow_html=True)
@@ -132,6 +132,8 @@ def plot_data(streamlit: st, stocks: pd.DataFrame, selected_stocks: list, height
 
 example_stocks = ['MSFT', 'TSLA']
 col2.subheader(f'Example: {name_from(example_stocks[0])} vs {name_from(example_stocks[1])}')
+for i in range(2):
+    col2.write('')
 example_data = get_stocks(example_stocks)
 plot_data(col2, example_data, example_stocks, height=400)
 
